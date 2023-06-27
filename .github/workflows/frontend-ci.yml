@@ -66,7 +66,7 @@ jobs:
         with:
           username: ${{ secrets.VPS_USER }}
           host: ${{ secrets.VPS_HOST }}
-          password: ${{ secrets.VPS_KEY }}
+          key: ${{ secrets.VPS_KEY }}
           script: '
           docker rm steve2312.net &&
           docker pull steve2312/steve2312.net &&
