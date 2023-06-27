@@ -71,5 +71,5 @@ jobs:
           docker stop steve2312.net || true &&
           docker rm steve2312.net || true &&
           docker pull steve2312/steve2312.net &&
-          docker run -d -p 80:80 --name steve2312 steve2312/steve2312.net
+          docker run -d -p 80:80 --name steve2312.net steve2312/steve2312.net
           '
