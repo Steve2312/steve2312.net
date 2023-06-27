@@ -59,7 +59,7 @@ jobs:
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/steve2312.net:latest
   deploy:
     runs-on: ubuntu-latest
-    needs: [ build ]
+    needs: [ package ]
     steps:
       - name: Deploy to VPS
         uses: appleboy/ssh-action@master
