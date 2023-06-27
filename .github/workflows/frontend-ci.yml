@@ -68,7 +68,8 @@ jobs:
           host: ${{ secrets.VPS_HOST }}
           key: ${{ secrets.VPS_KEY }}
           script: '
-          docker rm steve2312.net &&
+          docker stop steve2312.net || true &&
+          docker rm steve2312.net || true &&
           docker pull steve2312/steve2312.net &&
           docker run -t steve2312 -p 80:80 steve2312/steve2312.net
           '
