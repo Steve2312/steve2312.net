@@ -49,7 +49,7 @@ export default function LanguageSwitcher(props: Props) {
             <ul className="absolute right-0 z-10">
                 {i18n.languages.filter(language => language !== i18n.language).map((language, index) => (
                     <li key={language} className={`mt-6 transition-all ${getDelay(index, show)} ${show ? "opacity-100" : "opacity-0 translate-x-10 pointer-events-none"}`}>
-                        <span className={`${props.theme == "dark" && "text-gray-300 hover:text-gray-100 whitespace-nowrap block text-right"} ${props.theme == "light" && "text-gray-500 hover:text-gray-700"} text-lg font-bold tracking-wider hover:underline underline-offset-4 transition-colors`}>
+                        <span className={`${props.theme == "dark" && "text-gray-300 hover:text-gray-100"} ${props.theme == "light" && "text-gray-500 hover:text-gray-700"} text-lg font-bold tracking-wider hover:underline underline-offset-4 whitespace-nowrap block text-right transition-colors`}>
                             <Link to={"/" + language} reloadDocument>
                                 {getLanguageLabel(language)}
                             </Link>
