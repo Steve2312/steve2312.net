@@ -28,17 +28,30 @@ export default function LanguageSwitcher(props: Props) {
         }
     }
 
+    const getLanguageLabel = (language: string) => {
+        switch (language) {
+            case "jp":
+                return "日本"
+            case "kr":
+                return "한글"
+            case "zh":
+                return "中文"
+            default:
+                return language.toUpperCase()
+        }
+    }
+
     return (
         <div className="relative">
             <button className="text-lg font-bold tracking-wider hover:underline underline-offset-4" onClick={() => setShow(!show)}>
-                {i18n.language.toUpperCase()}
+                {getLanguageLabel(i18n.language)}
             </button>
             <ul className="absolute right-0 z-10">
                 {i18n.languages.filter(language => language !== i18n.language).map((language, index) => (
                     <li key={language} className={`mt-6 transition-all ${getDelay(index, show)} ${show ? "opacity-100" : "opacity-0 translate-x-10 pointer-events-none"}`}>
                         <Link to={"/" + language} reloadDocument>
-                            <span className={`${props.theme == "dark" && "text-gray-300 hover:text-gray-100"} ${props.theme == "light" && "text-gray-500 hover:text-gray-700"} text-lg font-bold tracking-wider hover:underline underline-offset-4 transition-colors`}>
-                                {language.toUpperCase()}
+                            <span className={`${props.theme == "dark" && "text-gray-300 hover:text-gray-100 whitespace-nowrap"} ${props.theme == "light" && "text-gray-500 hover:text-gray-700"} text-lg font-bold tracking-wider hover:underline underline-offset-4 transition-colors`}>
+                                {getLanguageLabel(language)}
                             </span>
                         </Link>
                     </li>
