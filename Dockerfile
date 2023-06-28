@@ -9,5 +9,7 @@
 #COPY --from=build /steve2312.net/dist /usr/share/nginx/html
 
 FROM nginx:latest
+COPY /nginx/steve2312-net-certificate.conf /etc/nginx/snippets/steve2312-net-certificate.conf
+COPY /nginx/steve2312-net-ssl-params.conf /etc/nginx/snippets/steve2312-net-ssl-params.conf
 COPY /nginx/nginx.conf /etc/nginx/conf.d/default.conf
 COPY /dist /usr/share/nginx/html
