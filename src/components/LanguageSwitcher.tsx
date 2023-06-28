@@ -30,6 +30,8 @@ export default function LanguageSwitcher(props: Props) {
 
     const getLanguageLabel = (language: string) => {
         switch (language) {
+            case "en":
+                return "ENG"
             case "jp":
                 return "日本"
             case "kr":
