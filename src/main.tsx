@@ -1,13 +1,13 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import Home from './pages/Home.tsx'
+import App from "./App.tsx";
 import './index.css'
 import './config/i18n.ts'
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
       <React.Suspense>
-          <Home />
+          <App />
       </React.Suspense>
   </React.StrictMode>,
 )
