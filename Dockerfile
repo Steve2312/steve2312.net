@@ -9,4 +9,5 @@
 #COPY --from=build /steve2312.net/dist /usr/share/nginx/html
 
 FROM nginx:latest
+COPY /nginx/nginx.conf /etc/nginx/conf.d/default.conf
 COPY /dist /usr/share/nginx/html
