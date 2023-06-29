@@ -69,5 +69,9 @@ jobs:
           docker stop steve2312.net || true &&
           docker rm steve2312.net || true &&
           docker pull steve2312/steve2312.net &&
-          docker run -d -p 80:80 -p 443:443 --mount type=bind,source=/etc/letsencrypt,target=/etc/letsencrypt --mount type=bind,source=/root/nginx/,target=/usr/share/nginx/ --name steve2312.net steve2312/steve2312.net
+          docker run -d -p 80:80 -p 443:443 
+            --mount type=bind,source=/etc/letsencrypt,target=/etc/letsencrypt
+            --mount type=bind,source=/root/nginx/dhparam,target=/usr/share/nginx/dhparam
+            --mount type=bind,source=/root/nginx/acme-challenge,target=/usr/share/nginx/acme-challenge 
+            --name steve2312.net steve2312/steve2312.net
           '
