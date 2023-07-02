@@ -3,5 +3,9 @@
   "occupation": "Student, Web designer & Software Engineer",
   "all-rights-reserved": "© {{name}}, All Rights Reserved",
   "coming-soon": "Coming soon...",
-  "error-404-not-found": "The page you are trying to visit does not exist :("
+  "error-404-not-found": "The page you are trying to visit does not exist :(",
+  "reading-time": "Reading time: {{minutes}} minute(s)",
+  "about-me": "About me",
+  "about-me-content-body": "Hello there! I'm Stefan So, but you can also call me Steve, and I'm delighted to have you here. As a fourth-year Computer Science student, I am passionate about web development and software engineering. Exploring the vast possibilities within this field has been an exciting journey for me.\nI find immense joy in diving deep into the realms of coding, particularly with JavaScript/TypeScript frameworks. Through personal, school, and internship projects, I have honed my skills and expanded my knowledge by experimenting with different frameworks. The ability to bring ideas to life has always fascinated me, and I'm constantly seeking new challenges to further enhance my expertise. I am currently experimenting with continuous integration and deployment using GitHub workflows, Docker, and Linux. Additionally, I will be starting my minor in September 2023 in Utrecht, where I plan to further explore and utilize these technologies in my coursework.\nI look forward to connecting with like-minded individuals who share my passion for web development and the ever-evolving world of technology. Let's collaborate, inspire each other, and pave the way for exciting future endeavors together!\nThank you for stopping by! ~Steve",
+  "social-media": "Social media"
 }

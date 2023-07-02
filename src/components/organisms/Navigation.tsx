@@ -1,4 +1,4 @@
-import LanguageSwitcher from './LanguageSwitcher.tsx'
+import LanguageSwitcher from '../molecules/LanguageSwitcher.tsx'
 import React, { createRef, RefObject, useEffect, useState } from 'react'
 
 type Props = {
