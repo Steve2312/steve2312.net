@@ -17,7 +17,7 @@ const Heading: React.FC<Props> = (props) => {
         case HeadingType.SUB_TITLE:
             return 'text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-semibold drop-shadow-lg'
         case HeadingType.HEADING:
-            return 'text-6xl font-bold'
+            return 'text-3xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-5xl font-bold'
         }
     }
 
