@@ -24,7 +24,7 @@ const Navigation: React.FC<Props> = (props) => {
 
     return (
         <nav className={`fixed flex justify-between w-full p-10 z-50 border-b transition-all ${passedThreshold ? 'bg-gray-50 text-black' : 'text-white border-transparent'}`} ref={navigationRef}>
-            <span className="text-lg font-bold tracking-wider">Hibiki</span>
+            <span className="md:text-lg font-bold tracking-wider">Hibiki</span>
             <LanguageSwitcher theme={passedThreshold ? 'light' : 'dark'} />
         </nav>
     )

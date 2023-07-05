@@ -13,11 +13,11 @@ const Heading: React.FC<Props> = (props) => {
     const getClasses = (type: HeadingType): string => {
         switch (type) {
         case HeadingType.TITLE:
-            return 'text-4xl sm:text-5xl lg:text-7xl xl:text-8xl font-bold drop-shadow-lg'
+            return 'text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold drop-shadow-lg'
         case HeadingType.SUB_TITLE:
-            return 'text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-semibold drop-shadow-lg'
+            return 'text-lg sm:text-xl lg:text-2xl xl:text-3xl font-semibold drop-shadow-lg'
         case HeadingType.HEADING:
-            return 'text-3xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-5xl font-bold'
+            return 'text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-bold'
         }
     }
 
