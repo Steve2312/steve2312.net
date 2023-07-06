@@ -21,7 +21,7 @@ const Header: React.FC<Props> = ({ prismicHomePage }) => {
                 <span className="text-white text-sm tracking-wider opacity-50">{t('all-rights-reserved', { name: 'Stefan So' })}</span>
                 <span className="text-white text-right text-sm tracking-wider opacity-50">2023 - 2024</span>
             </section>
-            <video className="absolute h-full w-full object-cover object-center" src={prismicHomePage.data.video.url} autoPlay muted loop playsinline />
+            <video className="absolute h-full w-full object-cover object-center" src={prismicHomePage.data.video.url} autoPlay muted loop playsInline />
         </header>
     )
 }
