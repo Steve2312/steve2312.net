@@ -1,5 +1,5 @@
 import React from 'react'
-import { HeadingType } from '../components.types.ts'
+import { HeadingType } from '../../types/components.types.ts'
 
 type Props = {
     type: HeadingType,

@@ -1,6 +1,4 @@
 {
-  "greeting": "Hello there, it's Steve",
-  "occupation": "Student, Web designer & Software Engineer",
   "all-rights-reserved": "© {{name}}, All Rights Reserved",
   "coming-soon": "Coming soon...",
   "error-404-not-found": "The page you are trying to visit does not exist :(",
