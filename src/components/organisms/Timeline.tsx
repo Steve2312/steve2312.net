@@ -28,7 +28,7 @@ const Timeline: React.FC<Props> = (props) => {
                     <BodyText className="mb-4" field={item.company_description} />
                     <Heading level={4} type={HeadingType.CARD_SUB_HEADING} className="mb-2">{item.position[0]?.text}</Heading>
                     <BodyText className="mb-4" field={item.position_description} />
-                    <Link />
+                    <Link>{item.link_anchor}</Link>
                 </div>
             </div>
         )

@@ -27,7 +27,8 @@ export type PrismicTimelineItem = {
     begin_date: KeyTextField,
     end_date: KeyTextField,
     position: TitleField,
-    position_description: RichTextField
+    position_description: RichTextField,
+    link_anchor: KeyTextField
 }
 
 export type PrismicCard = Slice<'card', PrismicCardPrimary>
