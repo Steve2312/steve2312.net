@@ -11,7 +11,7 @@ type Props = {
 
 const ContentWithImage: React.FC<Props> = (props) => {
     return (
-        <SafeArea className="flex gap-10 flew-col md:flex-row">
+        <SafeArea className="flex gap-10 flex-col md:flex-row">
             <div className="flex-1">
                 <Heading level={2} type={HeadingType.HEADING} className="mb-10">{props.prismicContentWithImage.primary.heading[0]?.text}</Heading>
                 <BodyText className="leading-8" field={props.prismicContentWithImage.primary.content}/>
