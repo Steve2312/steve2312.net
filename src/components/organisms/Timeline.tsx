@@ -34,8 +34,8 @@ const Timeline: React.FC<Props> = (props) => {
         )
     })
     return (
-        <SafeArea className="flex gap-10">
-            <div className="flex-[2] sticky top-24 h-full">
+        <SafeArea className="flex gap-10 flex-col md:flex-row">
+            <div className="flex-[2] md:sticky md:top-24 md:h-full">
                 <Heading level={2} type={HeadingType.HEADING} className="mb-10">{props.prismicTimeline.primary.heading[0]?.text}</Heading>
                 <BodyText className="leading-8" field={props.prismicTimeline.primary.content}/>
             </div>
