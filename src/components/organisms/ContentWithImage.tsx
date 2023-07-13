@@ -9,15 +9,15 @@ type Props = {
     prismicContentWithImage: PrismicContentWithImage
 }
 
-const ContentWithImage: React.FC<Props> = (props) => {
+const ContentWithImage: React.FC<Props> = ({ prismicContentWithImage }) => {
     return (
-        <SafeArea className="flex gap-10 flex-col md:flex-row">
+        <SafeArea className={`flex gap-10 ${prismicContentWithImage.primary.content_position == 'left' ? 'flex-col md:flex-row' : 'flex-col-reverse md:flex-row-reverse'}`}>
             <div className="flex-1">
-                <Heading level={2} type={HeadingType.HEADING} className="mb-10">{props.prismicContentWithImage.primary.heading[0]?.text}</Heading>
-                <BodyText className="leading-8" field={props.prismicContentWithImage.primary.content}/>
+                <Heading level={2} type={HeadingType.HEADING} className="mb-10">{prismicContentWithImage.primary.heading[0]?.text}</Heading>
+                <BodyText className="leading-8" field={prismicContentWithImage.primary.content}/>
             </div>
             <div className="flex-1">
-                <img src={props.prismicContentWithImage.primary.image.url} className="h-full w-full object-cover" />
+                <img src={prismicContentWithImage.primary.image.url} className="h-full w-full object-cover" />
             </div>
         </SafeArea>
     )

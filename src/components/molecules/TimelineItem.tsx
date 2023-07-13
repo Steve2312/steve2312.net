@@ -14,7 +14,7 @@ type Props = {
 
 const TimelineItem: React.FC<Props> = ({ prismicTimelineItem, isFirst, isLast }) => {
     return (
-        <div className="flex justify-center">
+        <div className="flex justify-center gap-10">
             <div className="flex flex-col items-center">
                 <div className={`flex-1 bg-white ${isFirst ? 'w-0' : 'w-0.5'}`}></div>
                 { isFirst ?

@@ -3,7 +3,7 @@ import {
     FilledLinkToMediaField,
     KeyTextField,
     PrismicDocument,
-    RichTextField, Slice, SliceZone,
+    RichTextField, SelectField, Slice, SliceZone,
     TitleField
 } from '@prismicio/client'
 
@@ -43,5 +43,6 @@ export type PrismicContentWithImage = Slice<'contentwithimage', PrismicContentWi
 export type PrismicContentWithImagePrimary = {
     heading: TitleField,
     content: RichTextField,
+    content_position: SelectField
     image: FilledImageFieldImage
 }
