@@ -10,7 +10,7 @@ type Props = {
 
 const Header: React.FC<Props> = ({ prismicHomePage }) => {
     return (
-        <header className="relative flex flex-col justify-center items-center bg-white h-screen overflow-hidden">
+        <header className="relative flex flex-col justify-center items-center bg-black h-screen overflow-hidden">
             <SafeArea className="text-white z-20">
                 <Heading
                     level={2}
