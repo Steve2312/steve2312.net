@@ -100,6 +100,7 @@ jobs:
         run: |
           git tag ${{ env.NEW_TAG }}
           git push origin ${{ env.NEW_TAG }}
+          gh release create ${{ env.NEW_TAG }}
 
   package:
     runs-on: ubuntu-latest
