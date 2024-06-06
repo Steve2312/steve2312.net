@@ -1,0 +1,4 @@
+host: steve2312.net
+image:
+  repository: steve2312/steve2312.net
+  tag: latest
