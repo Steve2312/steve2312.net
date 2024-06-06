@@ -45,12 +45,13 @@ jobs:
           echo "$LATEST_TAG"
           
           echo "LATEST_TAG=$(echo $LATEST_TAG)" >> $GITHUB_ENV
+          echo "LATEST_TAG=$(echo $LATEST_TAG)" >> $GITHUB_OUTPUT
 
       - name: First release
         if: env.LATEST_TAG == ''
         run: |
-          echo "NEW_VERSION=1.0.0" >> $GITHUB_ENV
-          echo "NEW_TAG=v1.0.0" >> $GITHUB_ENV
+          echo "NEW_VERSION=1.0.0" >> $GITHUB_OUTPUT
+          echo "NEW_TAG=v1.0.0" >> $GITHUB_OUTPUT
 
       - name: Determine next version
         if: env.LATEST_TAG != ''
@@ -76,8 +77,12 @@ jobs:
           
           NEW_VERSION="$MAJOR.$MINOR.$PATCH"
           NEW_TAG="v$MAJOR.$MINOR.$PATCH"
+          
           echo "NEW_VERSION=$NEW_VERSION" >> $GITHUB_ENV
+          echo "NEW_VERSION=$NEW_VERSION" >> $GITHUB_OUTPUT
+          
           echo "NEW_TAG=$NEW_TAG" >> $GITHUB_ENV
+          echo "NEW_TAG=$NEW_TAG" >> $GITHUB_OUTPUT
 
       - name: Create and push tag
         if: env.LATEST_TAG != env.NEW_TAG
@@ -89,6 +94,7 @@ jobs:
     runs-on: ubuntu-latest
     needs:
       - versioning
+    if: needs.versioning.outputs.latest-tag != needs.versioning.outputs.new-tag
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -114,4 +120,4 @@ jobs:
           context: .
           file: Dockerfile
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/steve2312.net:${{ env.NEW_VERSION }}
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/steve2312.net:${{ needs.versioning.outputs.new-version }}
