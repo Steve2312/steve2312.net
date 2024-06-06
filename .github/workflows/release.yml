@@ -39,7 +39,7 @@ jobs:
       - name: Get tag version
         run: |
           git fetch --tags
-          LATEST_TAG=$(git describe --tags --abbrev=0 HEAD)
+          LATEST_TAG=$(git describe --tags --abbrev=0 --all)
           echo "LATEST_TAG=$LATEST_TAG" >> $GITHUB_ENV
           echo "LATEST_VERSION=${LATEST_TAG:1}" >> $GITHUB_ENV
           
