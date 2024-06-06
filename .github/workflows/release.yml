@@ -40,9 +40,14 @@ jobs:
           LATEST_TAG=$(git describe --abbrev=0 --tags)
           echo "LATEST_TAG=$(echo $LATEST_TAG)" >> $GITHUB_ENV
           echo "LATEST_VERSION=$(echo ${LATEST_TAG:1})" >> $GITHUB_ENV
-          
+
+      - name: Write
+        run: |
           echo "Latest tag: $LATEST_TAG"
           echo "Latest version: $LATEST_VERSION"
+          
+          echo "Latest tag: ${{ env.LATEST_TAG }}"
+          echo "Latest version: ${{ env.LATEST_VERSION }}"
 
 #      - name: Determine new version
 #        run: |
