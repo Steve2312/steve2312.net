@@ -97,6 +97,8 @@ jobs:
 
       - name: Create and push tag
         if: env.LATEST_TAG != env.NEW_TAG
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
           git tag ${{ env.NEW_TAG }}
           git push origin ${{ env.NEW_TAG }}
