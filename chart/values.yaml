@@ -1,4 +1,4 @@
 host: helm.steve2312.net
 image:
   repository: steve2312/steve2312.net
-  tag: 1.0.0
+  tag: 1.1.5
