@@ -3,6 +3,8 @@ run-name: Release frontend, triggered by ${{ github.actor }}
 on:
   push:
     branches: [ master ]
+permissions:
+  contents: write
 jobs:
 #  build:
 #    runs-on: ubuntu-latest
