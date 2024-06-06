@@ -153,6 +153,8 @@ jobs:
 
       - name: Push
         run: |
+          git config --local user.email "actions@github.com"
+          git config --local user.name "GitHub Actions"
           git add .
           git commit -m "Updated image tag to version: ${{ needs.versioning.outputs.new-version }}"
           git push
