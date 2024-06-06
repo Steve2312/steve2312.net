@@ -44,6 +44,7 @@ jobs:
           echo "LATEST_TAG=$LATEST_TAG" >> $GITHUB_ENV
           echo "LATEST_VERSION=${LATEST_TAG:1}" >> $GITHUB_ENV
           
+          echo "Latest tag: $LATEST_TAG"
           echo "Latest tag: ${{ env.LATEST_TAG }}"
           echo "Latest version: ${{ env.LATEST_VERSION }}"
 
