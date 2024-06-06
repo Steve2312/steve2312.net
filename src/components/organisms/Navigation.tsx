@@ -35,7 +35,7 @@ const Navigation: React.FC<Props> = (props) => {
             }`}
             ref={navigationRef}
         >
-            <span className="md:text-lg font-bold tracking-wider">Hibiki</span>
+            <span className="md:text-lg font-bold tracking-wider">Steve2312</span>
             <LanguageSwitcher />
         </nav>
     );
