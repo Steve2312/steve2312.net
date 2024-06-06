@@ -50,7 +50,7 @@ jobs:
       - name: Determine next version
         if: env.LATEST_TAG != ''
         run: |
-          LATEST_VERSION="${env.LATEST_TAG:1}"
+          LATEST_VERSION="${$LATEST_TAG:1}"
           MAJOR=$(echo "$LATEST_VERSION" | cut -d. -f1)
           MINOR=$(echo "$LATEST_VERSION" | cut -d. -f2)
           PATCH=$(echo "$LATEST_VERSION" | cut -d. -f3)
