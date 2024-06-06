@@ -74,7 +74,14 @@ jobs:
             elif git log "$LATEST_TAG"..HEAD --format=%B | grep -q 'Fix:'; then
               PATCH=$((PATCH + 1))
             else
-              echo "No version change needed"
+              NEW_VERSION="${LATEST_TAG:1}"
+              NEW_TAG=$LATEST_TAG
+            
+              echo "NEW_VERSION=$NEW_VERSION" >> $GITHUB_ENV
+              echo "NEW_VERSION=$NEW_VERSION" >> $GITHUB_OUTPUT
+            
+              echo "NEW_TAG=$NEW_TAG" >> $GITHUB_ENV
+              echo "NEW_TAG=$NEW_TAG" >> $GITHUB_OUTPUT
               exit 0
             fi
             
