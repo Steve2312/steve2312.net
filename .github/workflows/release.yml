@@ -108,6 +108,7 @@ jobs:
     runs-on: ubuntu-latest
     needs:
       - versioning
+      - package
     if: needs.versioning.outputs.latest-tag != needs.versioning.outputs.new-tag
     steps:
       - name: Checkout
