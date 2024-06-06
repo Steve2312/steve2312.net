@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ .Release.Name }}-deployment
-  namespace: {{ .Release.Name }}
+  name: {{ .Values.name }}-deployment
+  namespace: {{ .Values.name }}
 spec:
   replicas: 2
   selector:
     matchLabels:
-      service: {{ .Release.Name }}-website
+      service: {{ .Values.name }}-website
   template:
     metadata:
       labels:
-        service: {{ .Release.Name }}-website
+        service: {{ .Values.name }}-website
     spec:
       containers:
-        - name: {{ .Release.Name }}-website
+        - name: {{ .Values.name }}-website
           image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
           imagePullPolicy: Always
           resources:

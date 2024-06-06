@@ -3,8 +3,8 @@ kind: Ingress
 metadata:
   annotations:
     cert-manager.io/cluster-issuer: 'letsencrypt-issuer'
-  name: {{ .Release.Name }}-ingress
-  namespace: {{ .Release.Name }}
+  name: {{ .Values.name }}-ingress
+  namespace: {{ .Values.name }}
 spec:
   ingressClassName: nginx
   rules:
@@ -15,10 +15,10 @@ spec:
             path: "/"
             backend:
               service:
-                name: {{ .Release.Name }}-service
+                name: {{ .Values.name }}-service
                 port:
                   number: 80
   tls:
     - hosts:
         - '{{ .Values.host }}'
-      secretName: '{{ .Release.Name }}-ingress-tls-secret'
+      secretName: '{{ .Values.name }}-ingress-tls-secret'
