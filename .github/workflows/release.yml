@@ -34,6 +34,7 @@ jobs:
     outputs:
       latest-tag: ${{ steps.get-tag-version.outputs.LATEST_TAG }}
       new-tag: ${{ steps.determine-next-version.outputs.NEW_TAG }}
+      new-version: ${{ steps.determine-next-version.outputs.NEW_VERSION }}
     needs:
       - build
     steps:
@@ -56,6 +57,7 @@ jobs:
         run: |
           if [ -z "$LATEST_TAG" ]; then
             echo "NEW_TAG=v1.0.0" >> $GITHUB_OUTPUT
+            echo "NEW_VERSION=1.0.0" >> $GITHUB_OUTPUT
           else
             LATEST_VERSION="${LATEST_TAG:1}"
             MAJOR=$(echo "$LATEST_VERSION" | cut -d. -f1)
@@ -80,6 +82,8 @@ jobs:
             NEW_TAG="v$MAJOR.$MINOR.$PATCH"
             
             echo "NEW_VERSION=$NEW_VERSION" >> $GITHUB_ENV
+            echo "NEW_VERSION=$NEW_VERSION" >> $GITHUB_OUTPUT
+          
             echo "NEW_TAG=$NEW_TAG" >> $GITHUB_ENV
             echo "NEW_TAG=$NEW_TAG" >> $GITHUB_OUTPUT
           fi
