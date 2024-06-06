@@ -135,3 +135,20 @@ jobs:
           file: Dockerfile
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/steve2312.net:${{ needs.versioning.outputs.new-version }}
+
+  helm:
+    runs-on: ubuntu-latest
+    needs:
+      - versioning
+    if: needs.versioning.outputs.latest-tag != needs.versioning.outputs.new-tag
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Update values.yaml
+        uses: mikefarah/yq@master
+        run: |
+          yq w -i chart/values.yaml image.tag ${{ needs.versioning.outputs.new-version }}.
+          git add .
+          git commit -m "Updated image tag to version: ${{ needs.versioning.outputs.new-version }}"
+          git push
