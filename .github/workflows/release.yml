@@ -149,7 +149,7 @@ jobs:
       - name: Update values.yaml
         uses: mikefarah/yq@master
         with:
-          cmd: yq -i 'image.tag = ${{ needs.versioning.outputs.new-version }}' chart/values.yaml
+          cmd: yq -i '.image.tag = "${{ needs.versioning.outputs.new-version }}"' chart/values.yaml
 
       - name: Push
         run: |
