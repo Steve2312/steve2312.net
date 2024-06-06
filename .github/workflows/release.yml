@@ -39,15 +39,17 @@ jobs:
         run: |
           LATEST_TAG=$(git describe --abbrev=0 --tags)
           echo "LATEST_TAG=$(echo $LATEST_TAG)" >> $GITHUB_ENV
-          echo "LATEST_VERSION=$(echo ${LATEST_TAG:1})" >> $GITHUB_ENV
 
-      - name: Write
+      - name: First release
+        if: env.LATEST_TAG == ''
         run: |
-          echo "Latest tag: $LATEST_TAG"
-          echo "Latest version: $LATEST_VERSION"
+          echo "NEW_VERSION=1.0.0" >> $GITHUB_ENV
+
+      - name: Determine next version
+        if: env.LATEST_TAG != ''
+        run: |
+          echo ${{ env.NEW_VERSION }}
           
-          echo "Latest tag: ${{ env.LATEST_TAG }}"
-          echo "Latest version: ${{ env.LATEST_VERSION }}"
 
 #      - name: Determine new version
 #        run: |
