@@ -10,7 +10,7 @@ const Footer: React.FC = () => {
                 {t('all-rights-reserved', { name: 'Stefan So' })}
             </span>
             <span className="flex-1 text-right text-sm tracking-wider">
-                2023 - 2024
+                2026 - 2027
             </span>
         </footer>
     );
